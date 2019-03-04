@@ -1,0 +1,47 @@
+html{
+     margin:0;
+     padding:0;
+     box-sizing: border-box;
+}
+*,*::before,*::after{
+     box-sizing: inherit;
+}
+
+body{
+      background-color: rgb(93, 58, 206);
+}
+.container{
+     width:90%;
+     max-width:1000px;
+     margin:4rem auto;
+}
+
+table{
+     width:85%;
+     margin: 5px auto;
+     padding: 2rem;
+}
+table input{
+     text-align: center;
+     color:#fff;
+     border:none;
+     outline: 0;
+     background-color: #e6304e;
+     width:100%;
+     font-size: 1.1rem;
+     font-weight: bold;
+     padding: 1rem;
+}
+table thead tr td{
+     width:100%;
+}
+#resultado{
+     width:60%;
+     height: 40px;
+     margin: .5rem auto;
+     padding: 5px 1rem;
+     text-align: right;
+     font-size: 1.4rem;
+     background-color: #fff;
+     color:#e6304e;
+}

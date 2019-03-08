@@ -2,7 +2,6 @@ export class Calculadora{
 
      constructor(){
           this.arregloCalc = [];
-          this.valor = '';
           this.accion;
      }
 
@@ -11,8 +10,8 @@ export class Calculadora{
           this.accion = accion;
           this.arregloCalc.push(valor)
      }
-     mostrarDatos(){
-          return this.valor;
+     mostrarDatos(arrayNum, arrayAcciones){
+          return accion(arrayNum, arrayAcciones);
      }
 
      suma(valor1,valor2){
@@ -32,6 +31,37 @@ export class Calculadora{
      }
      porcentaje(valor1,valor2){
           return valor1+valor2;
+     }
+     accion(numeros, acciones){
+          let respuestas = [];
+          acciones.forEach((accion,i)=>{
+               switch(accion){
+                    case '+':
+                         respuestas.push(suma(numeros[i-1],numeros[i+1]))
+                    break;
+                    case '-':
+                         respuestas.push(resta(numeros[i-1],numeros[i+1]))
+                    break;
+                    case '*':
+                         respuestas.push(multiplicacion(numeros[i-1],numeros[i+1]))
+                    break;
+                    case '/':
+                         respuestas.push(division(numeros[i-1],numeros[i+1]))
+                    break;
+                    case '^':
+                         respuestas.push(potencia(numeros[i-1],numeros[i+1]))
+                    break;
+                    case '%':
+                         respuestas.push(porcentaje(numeros[i-1],numeros[i+1]))
+                    break;
+                    default:
+                         console.log('Error');
+                    break;
+               }
+          })
+          let respuesta;
+          respuestas.forEach(res => respuesta+=res)
+          return respuesta
      }
 
 }
